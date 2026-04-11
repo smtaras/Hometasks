@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="mean concave points <= 0.049\nentropy = 0.953\nsamples = 426\nvalue = [159, 267]\nclass = benign", fillcolor="#afd7f4"] ;
+1 [label="worst radius <= 16.825\nentropy = 0.286\nsamples = 260\nvalue = [13, 247]\nclass = benign", fillcolor="#43a2e6"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="area error <= 46.315\nentropy = 0.143\nsamples = 246\nvalue = [5, 241]\nclass = benign", fillcolor="#3d9fe6"] ;
+1 -> 2 ;
+3 [label="entropy = 0.096\nsamples = 243\nvalue = [3, 240]\nclass = benign", fillcolor="#3b9ee5"] ;
+2 -> 3 ;
+4 [label="entropy = 0.918\nsamples = 3\nvalue = [2, 1]\nclass = malignant", fillcolor="#f2c09c"] ;
+2 -> 4 ;
+5 [label="mean texture <= 18.96\nentropy = 0.985\nsamples = 14\nvalue = [8, 6]\nclass = malignant", fillcolor="#f8e0ce"] ;
+1 -> 5 ;
+6 [label="entropy = 0.0\nsamples = 6\nvalue = [0, 6]\nclass = benign", fillcolor="#399de5"] ;
+5 -> 6 ;
+7 [label="entropy = 0.0\nsamples = 8\nvalue = [8, 0]\nclass = malignant", fillcolor="#e58139"] ;
+5 -> 7 ;
+8 [label="worst perimeter <= 114.45\nentropy = 0.531\nsamples = 166\nvalue = [146, 20]\nclass = malignant", fillcolor="#e99254"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="worst texture <= 23.74\nentropy = 0.991\nsamples = 45\nvalue = [25, 20]\nclass = malignant", fillcolor="#fae6d7"] ;
+8 -> 9 ;
+10 [label="entropy = 0.61\nsamples = 20\nvalue = [3, 17]\nclass = benign", fillcolor="#5caeea"] ;
+9 -> 10 ;
+11 [label="entropy = 0.529\nsamples = 25\nvalue = [22, 3]\nclass = malignant", fillcolor="#e99254"] ;
+9 -> 11 ;
+12 [label="entropy = 0.0\nsamples = 121\nvalue = [121, 0]\nclass = malignant", fillcolor="#e58139"] ;
+8 -> 12 ;
+}
