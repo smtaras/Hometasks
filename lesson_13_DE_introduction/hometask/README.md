@@ -1,15 +1,13 @@
-# Data Engineering Home Task - Solution
+# Local Data Engineering ETL Pipeline (PostgreSQL & Docker)
 
-## Як запустити проєкт за 1 хвилину
-1. Встановіть залежності:
-    ```bash
+## Quick Start
+
+1. **Start the PostgreSQL Database via Docker:**
+   ```bash
+   docker-compose up -d
+
+2. Install Python Dependencies:
     pip install -r requirements.txt
-2. Запустіть пайплайн:
-    python src/pipeline.py
 
-## Опис процесу очищення даних
-1. Дублікати та пусті ID: Рядки без первинних ключів (customer_id, product_id, тощо) або з дубльованими ключами видаляються (drop_duplicates), оскільки вони порушують цілісність реляційної моделі.
-2. Email: Переведено в нижній регістр. Ті, що мали невалідний формат, замінено на invalid_format@example.com, а відсутні — на unknown@example.com.
-3. Ціни та кількість: Від'ємні значення перетворено на абсолютні (модуль числа). Нульові ціни замінено на дефолтні (9.99).
-4. Дати та статуси: Дати приведені до єдиного формату datetime. Статуси замовлень переведені в UPPERCASE для усунення проблем із різним регістром (напр. "delivered" та "Delivered").
-5. Missing References (Foreign Keys): Видалено "сирітські" записи. Замовлення не збережеться, якщо такого клієнта немає в системі.
+3. Execute the ETL Pipeline:
+    python src/pipeline.py
