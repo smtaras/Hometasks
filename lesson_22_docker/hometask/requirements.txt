@@ -1,0 +1,7 @@
+fastapi==0.100.0
+uvicorn==0.23.0
+pillow==10.0.0
+transformers==4.30.0
+torch==2.0.1
+python-multipart
+numpy<2.0.0
