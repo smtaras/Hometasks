@@ -12,7 +12,12 @@ def get_forecast(city: str) -> str:
 @mcp.tool()
 def get_air_quality(city: str) -> str:
     """Return the air-quality index (AQI) for a city."""
-    ...   # return e.g. {"Kyiv": "AQI 42 (good)"}.get(city, "unknown")
+    data = {
+        "Kyiv": "AQI 42 (good)",
+        "London": "AQI 65 (moderate)",
+        "Tokyo": "AQI 38 (good)"
+    }
+    return data.get(city, f"No AQI available for {city}")
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
